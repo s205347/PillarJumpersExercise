@@ -18,21 +18,20 @@ public class Main {
         }
         System.out.println("Now we know that the absolute minimum jump strength S should be " + currentMaxJump + " in order to jump from every pillar to another");
 
-        while (numberOfJumps < mostJumps) {
-            if (sum < currentMaxJump && currentStep < heightOfPillar[heightOfPillar.length-1]) {
+        while (numberOfJumps < mostJumps && currentStep < heightOfPillar[heightOfPillar.length-1]) {
                 for (int i = currentStep; i < heightOfPillar.length; i++) {
                     int difference2 = heightOfPillar[i] - heightOfPillar[i - 1];
                     sum = sum + difference2;
                     currentStep = heightOfPillar[i];
+                    if (sum > currentMaxJump) {
+                        numberOfJumps++;
+                    }
                 }
             }
-            numberOfJumps++;
-        }
-
             System.out.println("To check whether or not we have landed on the last pillar, this is the pillar we have landed at: " + currentStep);
             System.out.println("Check if the number of jumps is no more than 3. Here is the count of jumps made: " + numberOfJumps);
-        }
     }
+}
 
 
 
@@ -84,4 +83,27 @@ public class Main {
         }
         }
         numberOfJumps++;
+        }*/
+
+/*
+while (numberOfJumps < mostJumps) {
+        if (sum < currentMaxJump && currentStep < heightOfPillar[heightOfPillar.length-1]) {
+        for (int i = currentStep; i < heightOfPillar.length; i++) {
+        int difference2 = heightOfPillar[i] - heightOfPillar[i - 1];
+        sum = sum + difference2;
+        currentStep = heightOfPillar[i];
+        }
+        }
+        numberOfJumps++;
+        }*/
+
+ /*while (numberOfJumps < mostJumps && currentStep < heightOfPillar[heightOfPillar.length-1]) {
+                for (int i = currentStep; i < heightOfPillar.length; i++) {
+                    int difference2 = heightOfPillar[i] - heightOfPillar[i - 1];
+                    sum = sum + difference2;
+                    currentStep = heightOfPillar[i];
+                    if (sum > currentMaxJump) {
+                        numberOfJumps++;
+                }
+            }
         }*/
