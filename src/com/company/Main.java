@@ -1,15 +1,29 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-        int mostJumps = 3;
+        int mostJumps;
+        int numberOfPillars;
         int currentStep = 1;
         int numberOfJumps = 0;
         int currentMaxJump = 0;
         int sum = 0;
 
-        int[] heightOfPillar = {1, 3, 3, 4, 7, 8, 10};
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter the number of pillars from 1 to 100.000");
+        numberOfPillars = scan.nextInt();
+        System.out.println("Please enter the number of maximum jumps from 1 to 1.000.000.000");
+        mostJumps = scan.nextInt();
+
+        int[] heightOfPillar = new int[numberOfPillars];
+        System.out.println("Now enter the heights of the pillars");
+        for (int i=1; i<numberOfPillars; i++){
+            heightOfPillar[i] = scan.nextInt();
+        }
+
         for (int i = 1; i < heightOfPillar.length; i++) {
             int difference = heightOfPillar[i] - heightOfPillar[i - 1];
             if (difference > currentMaxJump) {
